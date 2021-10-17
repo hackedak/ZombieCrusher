@@ -16,7 +16,7 @@ public class SmoothFollow : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
+   
     void LateUpdate()
     {
         FollowPlayer();
