@@ -6,7 +6,7 @@ public class BaseController : MonoBehaviour
 {
     public Vector3 speed;   //for storing speed in x, y and z direction
     public float xSpeed = 8f, zSpeed = 15f;   
-    public float acceleration = 15f, decelaration = 18f;
+    public float acceleration = 18f, decelaration = 18f;
     public float lowSound, normalSound, highSound;
     public AudioClip engineOnSound, engineOffSound;
     

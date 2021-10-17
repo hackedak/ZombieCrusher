@@ -6,6 +6,10 @@ public class PlayerController : BaseController
 {
     private Rigidbody myBody;
 
+    public Transform bullet_StartPoint;
+    public GameObject bullet_Prefab;
+    public ParticleSystem shootFX;
+
     void Start()
     {
         myBody = GetComponent<Rigidbody>();
@@ -16,6 +20,7 @@ public class PlayerController : BaseController
     {
         MovementKeyboardControl();
          ChangeRotation();
+         ShootingControl();
     }
 
     void FixedUpdate() {
@@ -80,5 +85,13 @@ public class PlayerController : BaseController
         }
     }
 
+    public void ShootingControl(){
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject bullet = Instantiate(bullet_Prefab, bullet_StartPoint.position, Quaternion.identity);
+            bullet.GetComponent<BulletScript>().Move(2000f);
+            shootFX.Play();
+        }
+    }
 
 }// class
